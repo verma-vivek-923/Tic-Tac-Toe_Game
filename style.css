@@ -1,0 +1,251 @@
+*{
+    margin: 0;
+    padding: 0;
+}
+
+body{
+    /* background-color: #4a5759; */
+    background-color: #2f3e46;
+    /* background-color: #323232; */
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: flex-start;
+    width: 100vw;
+}
+.main-cont{
+    height: 100vh;
+    width: 100vh; 
+    display: flex;
+flex-direction: column;
+align-items: center;
+justify-content: center;
+/* background-color: brown; */
+}
+.main-cont h2{
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    text-align: center;
+    color: greenyellow;
+    /* color: #111; */
+    font-size: 70px;
+}
+
+.main-cont .msg{
+    /* font-family: Arial, Helvetica, sans-serif; */
+    text-align: center;
+    color: greenyellow;
+    font-size: 40px;
+}
+.game{
+    position: relative;
+    margin-top: 30px;
+    background-color: rgba(0, 0, 0, 0.501);
+    /* border: 2px solid rgb(190, 205, 50); */
+    height: 57vh;
+    width: 57vh;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    /* gap: 0rem; */
+    flex-wrap: wrap;
+}
+.game .box{
+    border-radius: .5rem;
+    border: none;
+    height: 18vh;
+    width: 18vh;
+    /* background-color: rgb(0, 128, 115); */
+    background-color: #00ffc389;
+    font-size: 70px;
+    color: rgb(33, 31, 31);
+    /* animation-duration: 2s; */
+}
+.game .box:hover{
+    background-color: #00ffc370;
+}
+
+
+.btn{
+    margin-top: 10px;
+    /* background-color: aqua; */
+    height: 10vh;
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.btn button{
+    background-color: #4a5759;
+    background-color: #101114;
+    color: greenyellow;
+    border: none;
+    border-radius: .5rem;
+    width: 30%;
+    height: 60%;
+    font-size: 20px;
+}
+.btn button:hover{
+    background-color: #1e1e1f;
+}
+.msg{
+    /* background-color: blue; */
+    height: 50px;
+    width: fit-content;
+    opacity: 1;
+}
+.hide{
+    /* display: none;  */
+    opacity: 0;
+}
+.game label{
+    display: none;
+    position: absolute;
+    border-radius: 1rem;
+    background-color:#323232;
+    height: 10px;
+    width: 66%;
+    animation: line .45s;
+}
+
+@keyframes line {
+    0%{
+        width: 0px;
+    }
+    100%{
+        width:95%;
+    }
+} 
+
+
+.todo-items{
+    width: 55%;
+    margin-top: 5px;
+    display: flex;
+    /* padding: 0 15px; */
+    border-radius: .5rem;
+    color: var(--text-color);
+    /* background-color: var(--background-color); */
+    /* background-color: var(--primary-color); */
+    align-items: center;
+    justify-content: space-between;
+    cursor: pointer;
+}
+input{
+    display: none;
+}
+
+.turn{
+    font-size: 22px;
+    color: greenyellow;
+    /* margin-right:7vw; */
+}
+.comp{
+    display: flex;
+    align-items: center;
+justify-content: center;
+}
+
+
+.todo-items .check{
+    height: 15px;
+    width: 15px;
+        /* background-color: azure; */
+        /* border: 2px solid #00ffc4; */
+        border: 2px solid greenyellow;
+        border-radius: 50%;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        transition: 400ms ease;
+        cursor: pointer;
+}
+.todo-items .check svg{
+    fill:transparent;
+}
+
+ .tasks{
+    flex-grow: 1;
+    font-size: 22px;
+    cursor: inherit;
+    color: #fff;
+    margin-right: 10px;
+}
+
+input:checked ~ .comp .check{
+    background-color:greenyellow;
+}
+input:checked ~ .comp .check svg{
+    fill:#111;
+}
+input:checked ~ .comp .tasks{
+   color:greenyellow;
+}
+input:checked ~ .turn{
+   color:#fff;
+}
+
+@media (max-width:500px){
+    .main-cont h2{
+        font-size: 50px;
+    }
+
+    .main-cont .msg{
+        margin-top: 20px;
+        font-size: 25px;
+    }
+
+    .game{
+        position: relative;
+        margin-top: 20px;
+        background-color: rgba(0, 0, 0, 0.501);
+        /* border: 2px solid rgb(190, 205, 50); */
+        height: 51vh;
+        width:51vh;
+        display: flex;
+        justify-content: space-around;
+        align-items: center;
+        /* gap: 0rem; */
+        flex-wrap: wrap;
+    }
+    .game .box{
+        height: 16vh;
+        width: 16vh;
+        font-size: 60px;
+    }
+
+    .btn button{
+        width: 40%;
+        height: 60%;
+        font-size: 18px;
+    }
+    .todo-items{
+        width: 85%;
+        margin-top: 5px;
+        display: flex;
+        /* padding: 0 15px; */
+        border-radius: .5rem;
+        color: var(--text-color);
+        /* background-color: var(--background-color); */
+        /* background-color: var(--primary-color); */
+        align-items: center;
+        justify-content: space-between;
+        cursor: pointer;
+    }
+
+
+
+    .turn{
+        font-size: 20px;
+        color: greenyellow;
+        /* margin-right:7vw; */
+    }
+    
+    .todo-items .check{
+        height: 13px;
+        width: 13px;
+    }
+    .tasks{
+        flex-grow: 1;
+        font-size: 20px;
+    }
+}
